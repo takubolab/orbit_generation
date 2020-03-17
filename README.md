@@ -9,7 +9,7 @@ roslanch daihen_ur5_moveit_config demo.launch
 ```
 rosrun orbit_generation orbit_generation.cpp
 ```
-## 　プログラムの説明
+## プログラムの説明
 
 棚の位置を変更する場合は87,88行目の
 ```
