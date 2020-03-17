@@ -17,4 +17,5 @@ private_nh.param<double>("x", shelf_pose.pose.position.x, 1.2 + 0.1 - (h * 0.01)
 private_nh.param<double>("y", shelf_pose.pose.position.y, -0.25 + (g * 0.01));
 ```
 の数値を変更する
+
 目標位置の変更は119〜135行目までのtarget_pose1.positionの値を変更する
