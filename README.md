@@ -88,6 +88,5 @@ handler.saveTrajectoryToBag(plan, directory_path.str());
 ```
 で軌道を保存している
 
-そして137行目のexecuteで軌道を再生している
-executeはなくても、軌道の保存は可能であるため、executeの軌道の確認なしでの軌道生成のほうが動作が早い
+そして137行目のexecuteで軌道を再生しているが、executeはなくても軌道の保存は可能であるため、executeの軌道の確認なしでの軌道生成のほうが動作が早い
 
