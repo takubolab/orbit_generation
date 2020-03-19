@@ -1,9 +1,9 @@
 # orbit_generation
-## 　はじめに
+## はじめに
 このパッケージはbase_placement_plannnerで用いる参照軌道の生成を行う
 
 その際、生成したbagファイルは自動的にbagファイル内にフォルダーを作成して保存される
-##　軌道生成を行う手順
+## 軌道生成を行う手順
 MoveItを立ち上げる．
 ```
 roslaunch daihen_ur5_moveit_config demo.launch
@@ -12,8 +12,8 @@ roslaunch daihen_ur5_moveit_config demo.launch
 ```
 rosrun orbit_generation orbit_generation.cpp
 ```
-##　プログラム内で書き換える可能性のある箇所について説明
-###　棚の位置、目標位置の変更方法
+## プログラム内で書き換える可能性のある箇所について説明
+### 棚の位置、目標位置の変更方法
 #### 棚の位置の変更について
 87,88行目の
 ```
@@ -30,7 +30,7 @@ private_nh.param<double>("y", shelf_pose.pose.position.y, -0.25 + (g * 0.01));
 （仮に範囲を超えた場合も貫通はせずにplanが失敗するだけであるだけである）
 また初期の目標位置の設定はbase_placement_plannnerの目標位置のみに設定してあり、棚を動かして擬似的に様々な位置から目標位置に軌道生成を行うようになっている
 
-###　bagファイルの保存先の設定
+### bagファイルの保存先の設定
 生成したbagファイルは自動的にbagファイル内にプログラム内のstrの名前のフォルダーが生成される
 そのため保存先のファイル名を変更する際には31行目の
 ```
@@ -43,7 +43,7 @@ private_nh.param<double>("y", shelf_pose.pose.position.y, -0.25 + (g * 0.01));
 ```
 を変更すればいい
 
-###　ループについての説明
+### ループについての説明
 棚の位置や目標位置の変更のため73行目以降に多くのforループが設定されている
 それらはそれぞれ用途が異なるため説明する
 
@@ -70,7 +70,7 @@ move_group.setNamedTarget("masita4");
 を変更したい姿勢に変更する
 また姿勢変更を行う際、180,184行目は手先が目標位置にある状態で棚の位置変更を行った場合、棚と貫通してしまう可能性があるため、demo.launchの初期姿勢に戻しているので、変更はしなくても特に問題はありません
 
-###　plan,executeについての説明
+### plan,executeについての説明
 このプログラムでは126行目のplanで軌道を生成し、134行目の
 ```
 handler.saveTrajectoryToBag(plan, directory_path.str());
