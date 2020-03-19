@@ -51,12 +51,7 @@ catkin_package(
 add_executable(orbit_generation src/orbit_generation.cpp)
 target_link_libraries(orbit_generation ${catkin_LIBRARIES})
 #add_dependencies(orbit_generation ${catkin_EXPORTED_TARGETS})
-add_executable(yuka src/yuka.cpp)
-target_link_libraries(yuka ${catkin_LIBRARIES})
-#add_dependencies(yuka ${catkin_EXPORTED_TARGETS})
-add_executable(move_base src/move_base.cpp)
-target_link_libraries(move_base ${catkin_LIBRARIES})
-#add_dependencies(move_base ${catkin_EXPORTED_TARGETS})
+
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
