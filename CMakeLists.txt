@@ -27,7 +27,6 @@ find_package(catkin REQUIRED COMPONENTS
   fcsc_moveit
 )
 catkin_package(
-  INCLUDE_DIRS include
   LIBRARIES roscpp
   CATKIN_DEPENDS
     geometric_shapes
