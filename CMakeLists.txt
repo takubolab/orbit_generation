@@ -51,7 +51,6 @@ add_executable(orbit_generation src/orbit_generation.cpp)
 target_link_libraries(orbit_generation ${catkin_LIBRARIES})
 #add_dependencies(orbit_generation ${catkin_EXPORTED_TARGETS})
 
-
 include_directories(
   ${catkin_INCLUDE_DIRS}
   include
