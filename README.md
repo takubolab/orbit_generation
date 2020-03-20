@@ -1,6 +1,6 @@
 # orbit_generation
 ## はじめに
-このパッケージはbase_placement_plannnerで用いる参照軌道の生成を行う
+このパッケージは[base_placement_plannner](https://github.com/takubolab/base_placement_planner)で用いる参照軌道の生成を行う
 
 その際、生成したbagファイルは自動的にbagファイル内にフォルダーを作成して保存される
 ## 軌道生成を行う手順
@@ -32,7 +32,7 @@ private_nh.param<double>("y", shelf_pose.pose.position.y, -0.25 + (g * 0.01));
 棚内部の作業領域の寸法は松本さんの修論より、奥行き 400[mm]× 幅 900[mm]× 高さ 500[mm]であるため、範囲内で収まるように設定する
 （仮に範囲を超えた場合も貫通はせずにplanが失敗するだけであるだけである）
 
-また初期の目標位置の設定はbase_placement_plannnerの目標位置のみに設定してあり、棚を動かして擬似的に様々な位置から目標位置に軌道生成を行うようになっている
+また初期の目標位置の設定は[base_placement_plannner](https://github.com/takubolab/base_placement_planner)の目標位置のみに設定してあり、棚を動かして擬似的に様々な位置から目標位置に軌道生成を行うようになっている
 
 ### bagファイルの保存先の設定
 生成したbagファイルは自動的にbagファイル内にプログラム内のstrの名前のフォルダーが生成される
@@ -87,6 +87,8 @@ move_group.setNamedTarget("masita4");
 handler.saveTrajectoryToBag(plan, directory_path.str());
 ```
 で軌道を保存している
+
+これは[trajectory_data_handler](https://github.com/takubolab/trajectory_data_handler)の関数を用いている
 
 そして137行目のexecuteで軌道を再生しているが、executeはなくても軌道の保存は可能であるため、executeの軌道の確認なしでの軌道生成のほうが動作が早い
 
