@@ -10,7 +10,7 @@ roslaunch daihen_ur5_moveit_config demo.launch
 ```
 軌道生成を行う
 ```
-rosrun orbit_generation orbit_generation.cpp
+rosrun orbit_generation orbit_generation
 ```
 ## プログラム内で書き換える可能性のある箇所について説明
 ### 棚の位置、目標位置の変更方法
